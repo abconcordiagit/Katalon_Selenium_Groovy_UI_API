@@ -1,0 +1,148 @@
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.Keys as Keys
+
+
+'Open browser'
+WebUI.openBrowser('')
+'Maximize browser window'
+WebUI.maximizeWindow()
+'Open URL'
+WebUI.navigateToUrl('https://automationintesting.online/#/admin')
+
+'Capture Screenshot'
+WebUI.takeFullPageScreenshot()
+
+'Verify Welcome page'
+WebUI.verifyElementText(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/h1_Welcome to Restful Booker Platform'), "Welcome to Restful Booker Platform")
+
+'Scroll to login'
+WebUI.scrollToElement(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/h2_Log into your account'), 0)
+'Verify login page'
+WebUI.verifyElementText(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/h2_Log into your account'), "Log into your account")
+'add usesr name'
+WebUI.setText(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/input_Log into your account_username'), 
+    'admin')
+'add password'
+WebUI.setEncryptedText(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/input_Log into your account_password'), 
+    '8SQVv/p9jVScEs4/2CZsLw==')
+'Capture Screenshot'
+WebUI.takeFullPageScreenshot()
+
+'Click on login'
+WebUI.click(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/button_Login'))
+
+'Capture Screenshot'
+WebUI.takeFullPageScreenshot()
+
+'Verify login by checking logout button text'
+WebUI.verifyElementText(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/a_Logout'), "Logout")
+
+'add room number 201'
+WebUI.setText(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/input_Logout_roomName'), 
+    '201')
+'Select twin'
+WebUI.selectOptionByValue(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/select_SingleTwinDoubleFamilySuite'), 
+    'Twin', true)
+'select accessible to true'
+WebUI.selectOptionByValue(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/select_falsetrue'), 
+    'true', true)
+'add price 201'
+WebUI.setText(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/input_Logout_roomPrice'), 
+    '201')
+'check Views'
+WebUI.click(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/input_Logout_featureCheck'))
+'check Radio'
+
+WebUI.click(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/input_Radio_featureCheck'))
+'check wifi'
+
+WebUI.click(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/input_WiFi_featureCheck'))
+'check refreshment'
+
+WebUI.click(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/input_Refreshments_featureCheck'))
+'check tv'
+
+WebUI.click(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/input_TV_featureCheck'))
+'check Safe'
+
+WebUI.click(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/input_Safe_featureCheck'))
+'Click on create button'
+
+WebUI.click(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/button_Create'))
+
+'Capture Screenshot'
+WebUI.takeFullPageScreenshot()
+
+'verify room 201'
+WebUI.verifyElementText(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/p_201'), "201")
+
+//WebUI.click(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/div_Twin'))
+'Back to booking page'
+WebUI.navigateToUrl('https://automationintesting.online/#/admin')
+'add room number 202'
+WebUI.setText(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/input_Logout_roomName'), 
+    '202')
+'Select Double'
+WebUI.selectOptionByValue(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/select_SingleTwinDoubleFamilySuite'), 
+    'Double', true)
+'Add price'
+WebUI.setText(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/input_Logout_roomPrice'), 
+    '202')
+'CHeck Views'
+WebUI.click(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/input_Logout_featureCheck'))
+'Check Radio'
+
+WebUI.click(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/input_Radio_featureCheck'))
+'Check wifi'
+
+WebUI.click(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/input_WiFi_featureCheck'))
+'Check Refreshments'
+
+WebUI.click(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/input_Refreshments_featureCheck'))
+'Check TV'
+
+WebUI.click(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/input_TV_featureCheck'))
+'Check Safe'
+
+WebUI.click(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/input_Safe_featureCheck'))
+
+'Click Create button'
+
+WebUI.click(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/button_Create'))
+
+'Capture Screenshot'
+WebUI.takeFullPageScreenshot()
+
+'Verify room 202'
+WebUI.verifyElementText(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/p_202'), "202")
+
+//WebUI.click(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/div_Room TypeAccessiblePriceRoom details101_ed3ca6'))
+'Click logout'
+WebUI.click(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/a_Logout'))
+
+'Scroll to login'
+WebUI.scrollToElement(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/button_Login'), 1)
+
+'Verify logout by checking Login button'
+WebUI.verifyElementText(findTestObject('Object Repository/CGIautomation/Page_Restful-booker-platform demo/button_Login'), "Login")
+'Capture Screenshot'
+WebUI.takeFullPageScreenshot()
+'Close browser'
+WebUI.closeBrowser()
+
